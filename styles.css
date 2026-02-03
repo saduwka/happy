@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   min-height: 100vh;
   min-height: 100dvh;
@@ -35,7 +35,7 @@ body {
 }
 
 .title {
-  font-family: 'Comic Neue', cursive;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
   font-size: 1.2rem;
   line-height: 1.35;
   text-align: center;
@@ -70,7 +70,7 @@ body {
   border-radius: 12px;
   padding: 0.85rem;
   margin: 1rem 0;
-  font-family: 'Comic Neue', cursive;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
 }
 
 .meme-frame.top {
@@ -262,7 +262,7 @@ body {
 }
 
 .big-text {
-  font-family: 'Comic Neue', cursive;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: #764ba2;
@@ -284,7 +284,7 @@ body {
 
 /* Кнопки: большие зоны нажатия для пальцев (min 44px) */
 .btn {
-  font-family: 'Nunito', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   padding: 0.9rem 1.5rem;
