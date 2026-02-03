@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#764ba2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Ты приглашёна! 🎂</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="confetti" id="confetti"></div>
+  <div class="fireworks" id="fireworks"></div>
+
+  <main class="invitation">
+    <div class="meme-frame top">
+      <span class="meme-text">Когда узнал, что тебя ждёт день рождения:</span>
+      <div class="meme-img drake">🕺💃 ДР с друзьями > 🥲 сидеть дома</div>
+    </div>
+
+    <h1 class="title">
+      <span class="wiggle">🎉</span>АЛИМА!<span class="wiggle">🎉</span> <br> ПРИГЛАШАЕМ НА ДЕНЬ РОЖДЕНИЯ 
+    </h1>
+
+    <p class="subtitle">Алиме посвящается</p>
+
+    <div class="meme-frame">
+      <span class="meme-text">Ты когда получил это приглашение:</span>
+      <div class="meme-img doge">✨ Много радости ✨ Такая вау ✨ Обязательно приду ✨</div>
+    </div>
+
+    <div class="carousel-container">
+        <span class="carousel-title">У этой красотки сегодня день рождения</span>
+      <div class="carousel" id="carousel">
+        <img src="assets/img1.jpeg" alt="Фото 1" class="carousel-img active">
+        <img src="assets/img2.jpeg" alt="Фото 2" class="carousel-img">
+        <img src="assets/img3.jpeg" alt="Фото 3" class="carousel-img">
+        <img src="assets/img4.jpeg" alt="Фото 4" class="carousel-img">
+        <img src="assets/img5.JPG" alt="Фото 5" class="carousel-img">
+        <img src="assets/img6.JPG" alt="Фото 6" class="carousel-img">
+        <img src="assets/img7.jpg" alt="Фото 7" class="carousel-img">
+      </div>
+      <button class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="Предыдущее фото">‹</button>
+      <button class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="Следующее фото">›</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+
+    <div class="details card">
+      <h2>📋 Детали (важная инфа):</h2>
+      <ul>
+        <li><strong>Кого чествуем:</strong> <span id="name-placeholder">Алима</span></li>
+        <li><strong>Когда:</strong> <span id="date-placeholder">04.02.2026</span></li>
+        <li><strong>Ваш транспорт ждет вас в 14:00 перед воротами вашей школы</strong></li>
+      </ul>
+    </div>
+
+    <div class="meme-frame">
+      <span class="meme-text">Организаторы, когда всё готово:</span>
+      <div class="meme-img success">Всё под контролем 😎 *на самом деле хаос*</div>
+    </div>
+
+    <div class="rules card">
+      <h2>⚠️ Правила:</h2>
+      <ul>
+        <li><strong>Именинник не имеет права говорить «мне ничего не надо» - </strong> уже надо</li>
+        <li><strong>Именинник обязан прийти вовремя,</strong>потому что это вообще-то его праздник.</li>
+        <li><strong>Фраза «я не хочу быть в центре внимания» временно недействительна.</strong></li>
+        <li><strong>Улыбаться на фото,</strong>даже если глаза уже не улыбаются.</li>
+        <li><strong>Все обещания, данные после 00:00, считаются юридически сомнительными.</strong></li>
+        <li><strong>Главное правило:</strong>именинник сегодня всегда прав. Даже когда нет.</li>
+      </ul>
+    </div>
+
+    <div class="meme-frame">
+      <span class="meme-text">Ждём тебя:</span>
+      <div class="meme-img waiting">Мы тут. Ты там. Давай объединимся. 🤝</div>
+    </div>
+
+    <div class="cta">
+      <p class="big-text">Не опозорься — приходи! 🫵</p>
+      <p class="small-text">(Шучу, приходи когда удобно, но лучше вовремя)</p>
+      <div class="cta-buttons">
+        <button type="button" class="btn" id="confirmBtn">Я приду! 🎈</button>
+        <button type="button" class="btn btn-runaway" id="runawayBtn">Не приду 😏</button>
+      </div>
+    </div>
+
+    <div class="meme-frame">
+
+      <p>Организаторы: Любящий муж и любящие друзья</p>
+    </div>
+
+    <footer class="footer">
+      <p>P.S. Это приглашение сделано с любовью.</p>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>Ура! 🎊</h2>
+      <p>Мы знали что ты придешь</p>
+      <button type="button" class="btn" id="closeModal">Ладно, закрыть</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

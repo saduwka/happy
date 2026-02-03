@@ -1,0 +1,567 @@
+/* ========== MOBILE FIRST (основная версия) ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 0.75rem 0.5rem;
+  padding-left: max(0.5rem, env(safe-area-inset-left));
+  padding-right: max(0.5rem, env(safe-area-inset-right));
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  color: #2d2d2d;
+  overflow-x: hidden;
+}
+
+.invitation {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  text-align: center;
+  color: #764ba2;
+  margin: 0.75rem 0 0.35rem;
+}
+
+.wiggle {
+  display: inline-block;
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.wiggle:nth-child(3) {
+  animation-delay: 0.25s;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.25rem;
+}
+
+.meme-frame {
+  background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%);
+  border: 3px solid #f59e0b;
+  border-radius: 12px;
+  padding: 0.85rem;
+  margin: 1rem 0;
+  font-family: 'Comic Neue', cursive;
+}
+
+.meme-frame.top {
+  margin-top: 0;
+}
+
+.meme-text {
+  display: block;
+  font-size: 0.85rem;
+  color: #92400e;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.meme-img {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f2937;
+  padding: 0.65rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.meme-img.drake {
+  background: #e0e7ff;
+  border-left: 4px solid #6366f1;
+}
+
+.meme-img.doge {
+  background: #d1fae5;
+  border-left: 4px solid #10b981;
+}
+
+.meme-img.success {
+  background: #fce7f3;
+  border-left: 4px solid #ec4899;
+}
+
+.meme-img.waiting {
+  background: #e0f2fe;
+  border-left: 4px solid #0ea5e9;
+}
+
+.card {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px dashed #94a3b8;
+}
+
+.card h2 {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 0.6rem;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.card li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.card li:last-child {
+  border-bottom: none;
+}
+
+.details span,
+.rules li {
+  color: #334155;
+}
+
+/* Карусель с фотографиями */
+.carousel-container {
+  position: relative;
+  margin: 1.25rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #764ba2;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.carousel-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(118, 75, 162, 0.85);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.carousel-btn:hover {
+  background: rgba(118, 75, 162, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn--prev {
+  left: 0.75rem;
+}
+
+.carousel-btn--next {
+  right: 0.75rem;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(248, 250, 252, 0.95);
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel-dot.active {
+  background: #764ba2;
+  transform: scale(1.3);
+}
+
+.carousel-dot:hover {
+  background: #94a3b8;
+}
+
+.cta {
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+}
+
+.big-text {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #764ba2;
+  margin-bottom: 0.2rem;
+}
+
+.small-text {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.85rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Кнопки: большие зоны нажатия для пальцев (min 44px) */
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.9rem 1.5rem;
+  min-height: 48px;
+  min-width: 140px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px -5px rgba(102, 126, 234, 0.45);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-runaway {
+  position: relative;
+  background: linear-gradient(135deg, #94a3b8, #64748b) !important;
+  transition: left 0.2s ease-out, top 0.2s ease-out;
+  user-select: none;
+}
+
+.btn-runaway.is-running {
+  position: fixed;
+  z-index: 50;
+}
+
+.btn-runaway:hover {
+  transform: scale(1.03);
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #e2e8f0;
+  line-height: 1.45;
+}
+
+.meme-ps {
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+/* Confetti */
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #f59e0b;
+  animation: confetti-fall 4s linear forwards;
+}
+
+.confetti-piece:nth-child(odd) { background: #ec4899; }
+.confetti-piece:nth-child(3n) { background: #6366f1; }
+.confetti-piece:nth-child(5n) { background: #10b981; }
+.confetti-piece:nth-child(7n) { background: #f97316; }
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Фейерверк при открытии */
+.fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.firework-burst {
+  position: fixed;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.firework-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translate(0, 0);
+  will-change: transform, opacity;
+}
+
+.firework-particle--physics {
+  animation: none;
+  color: inherit;
+}
+
+/* Modal — на мобильном почти на весь экран */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalPop 0.3s ease;
+}
+
+@keyframes modalPop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  color: #764ba2;
+  margin-bottom: 0.85rem;
+  font-size: 1.35rem;
+}
+
+.modal-content p {
+  margin-bottom: 0.6rem;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.modal-meme {
+  font-style: italic;
+  color: #64748b !important;
+  font-size: 0.85rem;
+}
+
+.modal-content .btn {
+  margin-top: 0.85rem;
+}
+
+/* ========== Планшеты и десктоп (дополнения) ========== */
+@media (min-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  .invitation {
+    max-width: 420px;
+    padding: 1.5rem;
+    border-radius: 22px;
+  }
+
+  .title {
+    font-size: 1.35rem;
+  }
+
+  .modal-content {
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .carousel {
+    aspect-ratio: 16 / 9;
+  }
+
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+
+  .carousel-btn--prev {
+    left: 1rem;
+  }
+
+  .carousel-btn--next {
+    right: 1rem;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .invitation {
+    max-width: 520px;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .subtitle {
+    margin-bottom: 1.5rem;
+  }
+
+  .meme-frame {
+    padding: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .meme-text {
+    font-size: 0.9rem;
+  }
+
+  .meme-img {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    border-radius: 16px;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .card li {
+    font-size: 0.95rem;
+  }
+
+  .btn-runaway:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (min-width: 1024px) {
+  .invitation {
+    max-width: 560px;
+  }
+}
